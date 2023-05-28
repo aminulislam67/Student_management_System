@@ -59,6 +59,24 @@ body{
     margin-top: 10px;
   }
   
-  .nav-buttons button {
-    margin-left: 10px;
-  }
+.mid{
+    text-align: center;
+    padding-bottom: 30px;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: lightblue;
+ 
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding-top: 20px;
+ }
+ .mid1{
+    text-decoration: none;
+    background-image: linear-gradient(rgb(0, 201, 151), rgb(33, 79, 230));
+    padding: 5px 20px;
+    color: aliceblue;
+    font-weight: 600;
+    border-radius: 7px;
+    border: 1px solid black;
+ }
