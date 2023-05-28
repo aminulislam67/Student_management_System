@@ -1,0 +1,64 @@
+body{
+    background-image: url(https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=1060&t=st=1685291275~exp=1685291875~hmac=35d90f5a696d0d7055ac15a4f7487fcb96c44b9e6e7bf2050903c8234e4698ba);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+ 
+  
+    
+}
+  .navbar {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .navbar h2 {
+    margin: 0;
+  }
+  
+  .container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #f0f0f0;
+    border: 3px solid #000000;
+    border-radius: 5px;
+
+  }
+  .center{
+    text-align: center;
+    
+  }
+  .link{
+ 
+    text-decoration: none;
+    background-image: linear-gradient(rgb(0, 201, 151), rgb(33, 79, 230));
+    padding: 5px 20px;
+    color: aliceblue;
+    font-weight: 600;
+    border-radius: 7px;
+    border: 1px solid black;
+    
+
+}
+  
+  form label {
+    display: inline-block;
+    width: 100px;
+  }
+  
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="email"] {
+    width: 250px;
+  }
+  
+  form input[type="submit"] {
+    margin-top: 10px;
+  }
+  
+  .nav-buttons button {
+    margin-left: 10px;
+  }

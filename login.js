@@ -9,7 +9,6 @@ function loginUser() {
     if (storedUser) {
       var user = JSON.parse(storedUser);
       if (username === user.username && password === user.password) {
-        alert("Login successful!");
         window.location.href="home.html"
         // Redirect to a success page or perform other actions
       } else {
