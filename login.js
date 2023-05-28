@@ -13,9 +13,7 @@ function loginUser() {
         window.location.href="home.html"
         // Redirect to a success page or perform other actions
       } else {
-        alert("Invalid username or password. Please try again.");
+        alert("Invalid username or password.");
       }
-    } else {
-      alert("User not found. Please register first.");
     }
   }
