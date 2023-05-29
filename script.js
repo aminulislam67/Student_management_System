@@ -32,6 +32,7 @@ function saveStudent(event) {
 
   // Save the updated student data to localStorage
   localStorage.setItem('students', JSON.stringify(students));
+  
 
   // Clear form input fields
   document.getElementById('student-name').value = '';
@@ -41,6 +42,7 @@ function saveStudent(event) {
   document.getElementById('student-dob').value = '';
 
   // Refresh the student table
+
   displayStudents();
 }
 
@@ -75,7 +77,9 @@ function editStudent(index) {
   localStorage.setItem('students', JSON.stringify(students));
 
   // Refresh the student table
+  
   displayStudents();
+
 }
 
 // Function to display students in the table
@@ -143,3 +147,4 @@ addStudentForm.addEventListener('submit', saveStudent);
 
 // Initial display of students
 displayStudents();
+

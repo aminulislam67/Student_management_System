@@ -1,8 +1,8 @@
-.container {
+
+  .container1 {
     width: 400px;
     margin: 0 auto;
   }
-  
   .center {
     text-align: center;
   }
@@ -33,4 +33,9 @@
   input[type="submit"]:hover {
     background-color: #45a049;
   }
-  
+  .cs{
+width: 100px;
+    padding-left: 30%;
+
+  }
+
