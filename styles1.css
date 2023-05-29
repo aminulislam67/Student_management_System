@@ -39,3 +39,24 @@ width: 100px;
 
   }
 
+  .studentTable{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid black;
+
+  
+  }
+  .edit-button,
+  .delete-button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+  }
