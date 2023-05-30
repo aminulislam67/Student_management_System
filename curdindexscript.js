@@ -1,42 +1,42 @@
-    // Retrieve the index from the URL query parameters
-    var urlParams = new URLSearchParams(window.location.search);
-    var index = urlParams.get("index");
+document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
 
-    // Retrieve student data from localStorage
-    var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
+  // Get form values
+  var name = document.getElementById("name").value;
+  var studentId = document.getElementById("studentId").value;
+  var email = document.getElementById("email").value;
+  var age = document.getElementById("age").value;
+  var session = document.getElementById("session").value;
 
-    // Retrieve the student data object at the specified index
-    var data = storedData[index];
+  // Create an object to store the values
+  var studentData = {
+    name: name,
+    studentId: studentId,
+    email: email,
+    age: age,
+    session: session
+  };
 
-    // Populate the form with the data values
-    document.getElementById("name").value = data.name;
-    document.getElementById("studentId").value = data.studentId;
-    document.getElementById("email").value = data.email;
-    document.getElementById("age").value = data.age;
-    document.getElementById("session").value = data.session;
+  // Get existing student data from localStorage or initialize empty array
+  var existingData = JSON.parse(localStorage.getItem("studentData")) || [];
 
-    document.getElementById("editForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form submission
+  // Add the new student data to the existing data array
+  existingData.push(studentData);
 
-      // Get form values
-      var name = document.getElementById("name").value;
-      var studentId = document.getElementById("studentId").value;
-      var email = document.getElementById("email").value;
-      var age = document.getElementById("age").value;
-      var session = document.getElementById("session").value;
+  // Store the updated student data in localStorage
+  localStorage.setItem("studentData", JSON.stringify(existingData));
 
-      // Update the data object with the new values
-      data.name = name;
-      data.email = email;
-      data.age = age;
-      data.session = session;
+  // Redirect to the display page
+  window.location.href = "display.html";
 
-      // Update the student data object in the storedData array
-      storedData[index] = data;
+  function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+}
 
-      // Update the localStorage with the modified student data
-      localStorage.setItem("studentData", JSON.stringify(storedData));
+  download(JSON.stringify(existingData), 'user.json', 'application/json');
 
-      // Redirect to the display page
-      window.location.href = "display.html";
-    });
+});
