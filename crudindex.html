@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Management System - Add Student</title>
+  <link rel="stylesheet" href="crudindexcss.css">
+
+</head>
+<body>
+  <h1>Student Management System - Add Student</h1>
+
+  <form id="myForm">
+    <label for="name">Student Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="studentId">Student ID:</label>
+    <input type="number" id="studentId" name="studentId" required>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="session">Session:</label>
+    <input type="text" id="session" name="session" required>
+
+    <input type="submit" value="Add Student">
+  </form>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get form values
+      var name = document.getElementById("name").value;
+      var studentId = document.getElementById("studentId").value;
+      var email = document.getElementById("email").value;
+      var age = document.getElementById("age").value;
+      var session = document.getElementById("session").value;
+
+      // Create an object to store the values
+      var studentData = {
+        name: name,
+        studentId: studentId,
+        email: email,
+        age: age,
+        session: session
+      };
+
+      // Get existing student data from localStorage or initialize empty array
+      var existingData = JSON.parse(localStorage.getItem("studentData")) || [];
+
+      // Add the new student data to the existing data array
+      existingData.push(studentData);
+
+      // Store the updated student data in localStorage
+      localStorage.setItem("studentData", JSON.stringify(existingData));
+
+      // Redirect to the display page
+      window.location.href = "display.html";
+    });
+  </script>
+</body>
+</html>

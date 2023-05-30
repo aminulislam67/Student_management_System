@@ -9,7 +9,7 @@ function loginUser() {
     if (storedUser) {
       var user = JSON.parse(storedUser);
       if (username === user.username && password === user.password) {
-        window.location.href="home.html"
+        window.location.href="crudindex.html"
         // Redirect to a success page or perform other actions
       } else {
         alert("Invalid username or password.");

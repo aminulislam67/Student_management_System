@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Management System - Display Students</title>
+  <link rel="stylesheet" href="displaycss.css">
+
+</head>
+<body>
+  <h1>Student Management System - Display Students</h1>
+
+  <input type="search" id="searchInput" placeholder="Search by student name">
+
+  <table id="dataTable">
+    <tr>
+      <th>Student Name</th>
+      <th>Student ID</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Session</th>
+      <th>Actions</th>
+    </tr>
+    <script>
+      function deleteStudent(index) {
+        // Retrieve student data from localStorage
+        var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
+
+        // Remove the student data object at the specified index
+        storedData.splice(index, 1);
+
+        // Update the localStorage with the modified student data
+        localStorage.setItem("studentData", JSON.stringify(storedData));
+
+        // Reload the page
+        window.location.reload();
+      }
+
+      // Retrieve student data from localStorage
+      var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
+
+      // Function to filter the students based on search input
+      function filterStudents() {
+        var searchInput = document.getElementById("searchInput").value.toLowerCase();
+
+        // Clear the table body
+        var table = document.getElementById("dataTable");
+        var tbody = table.getElementsByTagName("tbody")[0];
+        tbody.innerHTML = "";
+
+        // Filter the student data based on search input
+        var filteredData = storedData.filter(function(student) {
+          return student.name.toLowerCase().includes(searchInput);
+        });
+
+        // Iterate over each filtered student data object and create table rows
+        filteredData.forEach(function(student, index) {
+          var row = document.createElement("tr");
+          var nameCell = document.createElement("td");
+          var studentIdCell = document.createElement("td");
+          var emailCell = document.createElement("td");
+          var ageCell = document.createElement("td");
+          var sessionCell = document.createElement("td");
+          var actionsCell = document.createElement("td");
+
+          nameCell.textContent = student.name;
+          studentIdCell.textContent = student.studentId;
+          emailCell.textContent = student.email;
+          ageCell.textContent = student.age;
+          sessionCell.textContent = student.session;
+
+          var editButton = document.createElement("button");
+          editButton.textContent = "Edit";
+          editButton.addEventListener("click", function() {
+            editStudent(index);
+          });
+
+          var deleteButton = document.createElement("button");
+          deleteButton.textContent = "Delete";
+          deleteButton.addEventListener("click", function() {
+            deleteStudent(index);
+          });
+
+          actionsCell.appendChild(editButton);
+          actionsCell.appendChild(deleteButton);
+
+          row.appendChild(nameCell);
+          row.appendChild(studentIdCell);
+          row.appendChild(emailCell);
+          row.appendChild(ageCell);
+          row.appendChild(sessionCell);
+          row.appendChild(actionsCell);
+
+          tbody.appendChild(row);
+        });
+      }
+
+      // Function to edit a student
+      function editStudent(index) {
+        // Redirect to the edit page with the index as a URL parameter
+        window.location.href = "edit.html?index=" + index;
+      }
+
+      // Call the filterStudents function initially to display all students
+      filterStudents();
+
+      // Add an event listener to the search input for filtering students
+      document.getElementById("searchInput").addEventListener("input", function() {
+        filterStudents();
+      });
+    </script>
+  </table>
+</body>
+</html>
