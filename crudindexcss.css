@@ -80,15 +80,16 @@ nav a:hover {
 }
 .link2{
 
-  text-decoration: none;
+  
   background-image: linear-gradient(rgb(248, 64, 64), rgb(224, 232, 255));
   padding: 5px 20px;
   color: rgb(0, 0, 0);
-  font-weight: 900;
+  
   font-size: larger;
   
-  border-radius: 7px;
+  border-radius: 2px;
   border: 2px solid black;
+
 
 
 }
