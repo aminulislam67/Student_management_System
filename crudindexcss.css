@@ -64,3 +64,31 @@ body{
     padding-top: 20px;
  
  }
+ nav {
+  background-color: #69e9ee;
+  color: #fff;
+  padding: 20px;
+  text-align: right;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+nav a:hover {
+  text-decoration: none;
+}
+.link2{
+
+  text-decoration: none;
+  background-image: linear-gradient(rgb(248, 64, 64), rgb(224, 232, 255));
+  padding: 5px 20px;
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  font-size: larger;
+  
+  border-radius: 7px;
+  border: 2px solid black;
+
+
+}

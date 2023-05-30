@@ -1,3 +1,9 @@
+body{
+  background-image: url(https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=1060&t=st=1685291275~exp=1685291875~hmac=35d90f5a696d0d7055ac15a4f7487fcb96c44b9e6e7bf2050903c8234e4698ba);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  
+  }
 nav {
   background-color: #69e9ee;
   color: #fff;
@@ -38,14 +44,13 @@ input[type="search"] {
 }
 .link2{
 
-      text-decoration: none;
-      background-image: linear-gradient(rgb(248, 64, 64), rgb(224, 232, 255));
-      padding: 5px 20px;
-      color: rgb(0, 0, 0);
-      font-weight: 900;
-      
-      border-radius: 7px;
-      border: 2px solid black;
+  text-decoration: none;
+  background-image: linear-gradient(rgb(248, 64, 64), rgb(224, 232, 255));
+  padding: 5px 20px;
+  color: rgb(0, 0, 0);
+
+  border-radius: 7px;
+  border: 2px solid rgb(0, 0, 0);
 
 
 }
@@ -90,9 +95,4 @@ padding-top: 20px;
 
 
 }
-body{
-background-image: url(https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=1060&t=st=1685291275~exp=1685291875~hmac=35d90f5a696d0d7055ac15a4f7487fcb96c44b9e6e7bf2050903c8234e4698ba);
-background-repeat: no-repeat;
-background-size: cover;  
 
-}
