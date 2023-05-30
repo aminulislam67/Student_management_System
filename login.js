@@ -26,7 +26,7 @@ function loginUser() {
   
     // Retrieve registration data from local storage
         //usage:
-        readJsonFile("C://Users/Aminul Islam/AppData/Local/Temp/MicrosoftEdgeDownloads/3a92ec14-2737-49f8-9168-f936fc1596c9/user.json", function(text){
+        readJsonFile("user.json", function(text){
           var data = JSON.parse(text);
           console.log(data);
         });
