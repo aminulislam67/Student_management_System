@@ -5,7 +5,11 @@
   <link rel="stylesheet" href="editcss.css">
 </head>
 <body>
-  <h1>Student Management System - Edit Student</h1>
+  <div class="container">
+  <h1 class="mid">Student Management System - Edit Student Information</h1>
+</div>
+
+  <div class="edit">
 
   <form id="editForm">
     <label for="name">Student Name:</label>
@@ -23,8 +27,9 @@
     <label for="session">Session:</label>
     <input type="text" id="session" name="session" required>
 
-    <input type="submit" value="Save Changes">
+    <input class="link" type="submit" value="Save Changes">
   </form>
+</div>
 
   <script>
     // Retrieve the index from the URL query parameters

@@ -6,8 +6,10 @@
 
 </head>
 <body>
-  <h1>Student Management System - Add Student</h1>
-
+  <div class="container">
+  <h1 class="mid">Student Management System - Add Student</h1>
+</div>
+<div class="edit">
   <form id="myForm">
     <label for="name">Student Name:</label>
     <input type="text" id="name" name="name" required>
@@ -24,8 +26,9 @@
     <label for="session">Session:</label>
     <input type="text" id="session" name="session" required>
 
-    <input type="submit" value="Add Student">
+    <input class="link" type="submit" value="Add Student">
   </form>
+</div>
 
   <script>
     document.getElementById("myForm").addEventListener("submit", function(event) {

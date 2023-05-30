@@ -4,7 +4,7 @@
   <title>Student Management System - Display Students</title>
   <style>
     nav {
-      background-color: #0dbd9f;
+      background-color: #69e9ee;
       color: #fff;
       padding: 20px;
       text-align: right;
@@ -54,24 +54,68 @@
  
 
 }
-#dataBody td {
+.mid{
+   text-align: center;
+   padding-bottom: 30px;
+   width: 700px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: lightblue;
+
+   border: 1px solid #000000;
+   border-radius: 5px;
+   padding-top: 20px;
+
+}
+.container{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.search{
+  text-align: center;
+   margin-top: 50px;
+   width: 400px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: lightblue;
+
+   border: 1px solid #000000;
+   border-radius: 5px;
+   padding-top: 20px;
+
+}
+#dataBody td,th {
       text-align: center;
       vertical-align: middle;
+ 
+      background-color: rgb(224, 247, 255);
+
+      border: 1px solid #000000;
+      border-radius: 5px;
+
+
     }
+body{
+    background-image: url(https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=1060&t=st=1685291275~exp=1685291875~hmac=35d90f5a696d0d7055ac15a4f7487fcb96c44b9e6e7bf2050903c8234e4698ba);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    
+}
+
   </style>
 </head>
 <body>
   <nav>
     <a class="link2" href="crudindex.html">Home</a> <!-- Link to index.html -->
   </nav>
-  <h1>Student Management System - Displaying Students Information</h1>
+  <div class="container">
+  <h1 class="mid">Student Management System - Displaying Students Information</h1>
+</div>
 
-  <div>
+  <div class="search">
     <label for="nameInput">Search by Name:</label>
     <input type="search" id="nameInput" placeholder="Enter student name">
-  </div>
 
-  <div>
     <label for="idInput">Search by ID:</label>
     <input type="search" id="idInput" placeholder="Enter student ID">
   </div>

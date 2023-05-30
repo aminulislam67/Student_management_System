@@ -1,6 +1,9 @@
-body {
-    font-family: Arial, sans-serif;
-  }
+body{
+  background-image: url(https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=1060&t=st=1685291275~exp=1685291875~hmac=35d90f5a696d0d7055ac15a4f7487fcb96c44b9e6e7bf2050903c8234e4698ba);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  
+}
   form {
     max-width: 400px;
     margin: 20px auto;
@@ -17,3 +20,48 @@ body {
     border: none;
     cursor: pointer;
   }
+  .mid{
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    width: 800px;
+    margin: 0 auto;
+ 
+    background-color: lightblue;
+ 
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding-top: 20px;
+ 
+ }
+ .edit{
+  text-align: center;
+
+  padding-bottom: 30px;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: lightblue;
+
+  border: 1px solid #000000;
+  border-radius: 5px;
+
+
+}
+.container{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.link{
+ 
+  text-decoration: none;
+  background-image: linear-gradient(rgb(0, 201, 151), rgb(33, 79, 230));
+  padding: 5px 20px;
+  color: aliceblue;
+  font-weight: 600;
+  border-radius: 7px;
+  border: 1px solid black;
+  
+
+}
