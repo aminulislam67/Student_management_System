@@ -1,63 +1,162 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Student Management System - Add Student</title>
-  <link rel="stylesheet" href="crudindexcss.css">
-
+  <title>Student Management System - Display Students</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    button {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="search"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Student Management System - Add Student</h1>
+  <h1>Student Management System - Display Students</h1>
 
-  <form id="myForm">
-    <label for="name">Student Name:</label>
-    <input type="text" id="name" name="name" required>
+  <div>
+    <label for="nameInput">Search by Name:</label>
+    <input type="search" id="nameInput" placeholder="Enter student name">
+  </div>
 
-    <label for="studentId">Student ID:</label>
-    <input type="number" id="studentId" name="studentId" required>
+  <div>
+    <label for="idInput">Search by ID:</label>
+    <input type="search" id="idInput" placeholder="Enter student ID">
+  </div>
 
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email" required>
-
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age" required>
-
-    <label for="session">Session:</label>
-    <input type="text" id="session" name="session" required>
-
-    <input type="submit" value="Add Student">
-  </form>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Session</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="dataBody"></tbody>
+  </table>
 
   <script>
-    document.getElementById("myForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form submission
+    function deleteStudent(index) {
+      // Retrieve student data from localStorage
+      var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
 
-      // Get form values
-      var name = document.getElementById("name").value;
-      var studentId = document.getElementById("studentId").value;
-      var email = document.getElementById("email").value;
-      var age = document.getElementById("age").value;
-      var session = document.getElementById("session").value;
+      // Remove the student data object at the specified index
+      storedData.splice(index, 1);
 
-      // Create an object to store the values
-      var studentData = {
-        name: name,
-        studentId: studentId,
-        email: email,
-        age: age,
-        session: session
-      };
+      // Update the localStorage with the modified student data
+      localStorage.setItem("studentData", JSON.stringify(storedData));
 
-      // Get existing student data from localStorage or initialize empty array
-      var existingData = JSON.parse(localStorage.getItem("studentData")) || [];
+      // Reload the page
+      window.location.reload();
+    }
 
-      // Add the new student data to the existing data array
-      existingData.push(studentData);
+    // Retrieve student data from localStorage
+    var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
 
-      // Store the updated student data in localStorage
-      localStorage.setItem("studentData", JSON.stringify(existingData));
+    // Function to filter the students based on search input
+    function filterStudents() {
+      var nameInput = document.getElementById("nameInput").value.toLowerCase();
+      var idInput = document.getElementById("idInput").value.toLowerCase();
 
-      // Redirect to the display page
-      window.location.href = "display.html";
+      // Clear the table body
+      var dataBody = document.getElementById("dataBody");
+      dataBody.innerHTML = "";
+
+      // Filter the student data based on search input
+      var filteredData = storedData.filter(function(student) {
+        var nameMatch = student.name.toLowerCase().includes(nameInput);
+        var idMatch = student.studentId.toLowerCase().includes(idInput);
+
+        if (nameInput && idInput) {
+          return nameMatch && idMatch;
+        } else if (nameInput) {
+          return nameMatch;
+        } else if (idInput) {
+          return idMatch;
+        } else {
+          return true; // No search input provided
+        }
+      });
+
+      // Iterate over each filtered student data object and create table rows
+      filteredData.forEach(function(student, index) {
+        var row = document.createElement("tr");
+        var nameCell = document.createElement("td");
+        var studentIdCell = document.createElement("td");
+        var emailCell = document.createElement("td");
+        var ageCell = document.createElement("td");
+        var sessionCell = document.createElement("td");
+        var actionsCell = document.createElement("td");
+
+        nameCell.textContent = student.name;
+        studentIdCell.textContent = student.studentId;
+        emailCell.textContent = student.email;
+        ageCell.textContent = student.age;
+        sessionCell.textContent = student.session;
+
+        var editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.addEventListener("click", function() {
+          editStudent(index);
+        });
+
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", function() {
+          deleteStudent(index);
+        });
+
+        actionsCell.appendChild(editButton);
+        actionsCell.appendChild(deleteButton);
+
+        row.appendChild(nameCell);
+        row.appendChild(studentIdCell);
+        row.appendChild(emailCell);
+        row.appendChild(ageCell);
+        row.appendChild(sessionCell);
+        row.appendChild(actionsCell);
+
+        dataBody.appendChild(row);
+      });
+    }
+
+    // Function to edit a student
+    function editStudent(index) {
+      // Redirect to the edit page with the index as a URL parameter
+      window.location.href = "edit.html?index=" + index;
+    }
+
+    // Call the filterStudents function initially to display all students
+    filterStudents();
+
+    // Add event listeners to the search inputs for filtering students
+    document.getElementById("nameInput").addEventListener("input", function() {
+      filterStudents();
+    });
+
+    document.getElementById("idInput").addEventListener("input", function() {
+      filterStudents();
     });
   </script>
 </body>
