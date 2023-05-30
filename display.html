@@ -161,18 +161,23 @@
         // editButton.style.marginRight="15px";
         editButton.style.width="100px";
         editButton.style.border="3px solid black";
+        editButton.style.fontSize="1em";
         editButton.style.fontWeight="bold";
+        editButton.style.marginRight="5px";
         editButton.addEventListener("click", function() {
           editStudent(index);
         });
 
         var deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
-        deleteButton.style.backgroundColor="green";
+        deleteButton.style.backgroundColor="tomato";
         deleteButton.style.color="black";
         // deleteButton.style.marginRight="15px";
         deleteButton.style.width="100px";
         deleteButton.style.border="3px solid black";
+        deleteButton.style.fontSize="1em";
+       
+
         deleteButton.style.fontWeight="bold";
         deleteButton.addEventListener("click", function() {
           deleteStudent(index);
