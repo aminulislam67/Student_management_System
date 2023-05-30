@@ -65,7 +65,7 @@ body{
  
  }
  nav {
-  background-color: #69e9ee;
+  background-color: #c9fdff;
   color: #fff;
   padding: 20px;
   text-align: right;
@@ -81,15 +81,14 @@ nav a:hover {
 .link2{
 
   
-  background-image: linear-gradient(rgb(248, 64, 64), rgb(224, 232, 255));
+  background-image: linear-gradient(rgb(188, 253, 228), #0bf7eb);
   padding: 5px 20px;
   color: rgb(0, 0, 0);
-  
+
   font-size: larger;
   
   border-radius: 2px;
   border: 2px solid black;
-
 
 
 }
