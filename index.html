@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="reglog.css">
+    <script>
+        function register() {
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var password = document.getElementById('password').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+
+            var user = {
+                firstName: firstName,
+                lastName: lastName,
+                username: username,
+                email: email,
+                phone: phone,
+                password: password,
+                gender: gender
+            };
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:3000/register');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(user));
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                  window.location.href = 'login.html';
+                    alert(xhr.responseText);
+                     // Redirect to login page
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <h1>Registration</h1>
+    <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" value="male" checked> Male
+        <input type="radio" name="gender" value="female"> Female
+        <br><br>
+
+        <input type="button" value="Register" onclick="register()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="reglog.css">
+    
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Retrieve user data from local storage
+            var user = JSON.parse(localStorage.getItem('user'));
+
+            if (user && user.username === username && user.password === password) {
+                alert('Login successful!');
+                window.location.href = 'profile.html'; // Redirect to profile page
+            } else {
+                alert('Invalid username or password.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Login</h1>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+
+        <input type="button" value="Login" onclick="login()">
+    </form>
+</body>
+</html>

@@ -22,18 +22,23 @@
     <input type="search" id="idInput" placeholder="Enter student ID">
   </div>
 
-  <table id="dataTable">
-    <!-- <thead> -->
+  <button id="deleteSelectedButton">Delete Selected</button>
+
+  <table>
+    <thead>
       <tr>
-        <th>Serial</th>
+        <th>
+          <input type="checkbox" id="selectAllCheckbox">
+        </th>
+        <th>Serial Number</th>
         <th>Name</th>
-        <th>ID</th>
+        <th>Student ID</th>
         <th>Email</th>
         <th>Age</th>
         <th>Session</th>
         <th>Actions</th>
       </tr>
-    <!-- </thead> -->
+    </thead>
     <tbody id="dataBody"></tbody>
   </table>
 

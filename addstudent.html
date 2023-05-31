@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="adddse.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Student Management System</h1>
+  <form id="studentForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" required><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" required><br>
+
+    <label for="studentId">Student ID:</label>
+    <input type="text" id="studentId" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br>
+
+    <label for="dateOfAdmission">Date of Admission:</label>
+    <input type="date" id="dateOfAdmission" required><br>
+
+    <input type="submit" value="Add Student">
+  </form>
+
+  <div id="studentList"></div>
+
+  <script src="addscript.js"></script>
+</body>
+</html>
