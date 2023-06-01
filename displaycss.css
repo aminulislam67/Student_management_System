@@ -98,3 +98,43 @@ padding-top: 20px;
 
 }
 
+.del{
+  padding-top: 50px;
+}
+
+.butto{
+
+  text-align: left;
+  padding-bottom: 30px;
+
+  width: 500px;
+  
+  padding: 20px;
+  background-color: lightblue;
+  
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding-top: 20px;
+
+}
+#pagination button {
+  margin: 5px;
+}
+
+#pagination div {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#pagination a {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+#pagination a:hover {
+  background-color: #ddd;
+}
