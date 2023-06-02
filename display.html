@@ -14,15 +14,17 @@
   <h1 class="mid">Student Management System - Displaying Students Information</h1>
 </div>
 
-  <div class="search">
-    <label for="nameInput">Search by Name:</label>
-    <input type="search" id="nameInput" placeholder="Enter student name">
-
-    <label for="idInput">Search by ID:</label>
-    <input type="search" id="idInput" placeholder="Enter student ID">
+<div class="butto">
+  <div>
+    <label for="searchInput">Search by Name or Student ID:</label>
+    <input type="text" id="searchInput">
+    <button id="searchButton">Search</button>
   </div>
+</div>
 
+<div class='del'>
   <button id="deleteSelectedButton">Delete Selected</button>
+</div>
 
   <table>
     <thead>
@@ -30,6 +32,7 @@
         <th>
           <input type="checkbox" id="selectAllCheckbox">
         </th>
+        
         <th>Serial Number</th>
         <th>Name</th>
         <th>Student ID</th>
@@ -41,6 +44,7 @@
     </thead>
     <tbody id="dataBody"></tbody>
   </table>
+  <div id="pagination"></div>
 
   <script src="display.js"></script>
 </body>
