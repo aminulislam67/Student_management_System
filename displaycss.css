@@ -126,17 +126,17 @@ padding-top: 20px;
   margin: 0 10px;
 }
 
-  .pagination {
-      margin-top: 20px;
-    }
-    .pagination button,
-    .pagination span {
-      margin-right: 5px;
-      padding: 5px 10px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
-    .pagination button:hover,
-    .pagination span.current {
-      background-color: #ccc;
-    }
+.pagination {
+  margin-top: 20px;
+}
+.pagination button,
+.pagination span {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.pagination button:hover,
+.pagination span.current {
+  background-color: #ccc;
+}
