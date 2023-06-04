@@ -6,7 +6,7 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
   var studentId = document.getElementById("studentId").value;
   var email = document.getElementById("email").value;
   var age = document.getElementById("age").value;
-  var session = document.getElementById("session").value;
+  var session = document.getElementById("session").value; 
 
   // Create an object to store the values
   var studentData = {
