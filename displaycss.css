@@ -125,7 +125,6 @@ padding-top: 20px;
 
 #pagination .pagination-link {
   display: inline-block;
-<<<<<<< HEAD
   padding: 10px;
   margin: 0 5px;
   background-color: #f2f2f2;
@@ -147,22 +146,4 @@ padding-top: 20px;
 #pagination .pagination-ellipsis {
   margin: 0 5px;
   color: #999;
-=======
-  margin: 0 10px;
-}
-
-.pagination {
-  margin-top: 20px;
-}
-.pagination button,
-.pagination span {
-  margin-right: 5px;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-.pagination button:hover,
-.pagination span.current {
-  background-color: #ccc;
->>>>>>> 1ae2a9bfd48b8192fd10ebda4ac67046f5593afa
 }

@@ -54,11 +54,7 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
         var actionsCell = document.createElement("td");
         var editButton = document.createElement("button");
         editButton.textContent = "Edit";
-<<<<<<< HEAD
         editButton.classList.add("btn", "btn-primary");
-=======
-        // Add your edit button styles here
->>>>>>> 1ae2a9bfd48b8192fd10ebda4ac67046f5593afa
         editButton.addEventListener("click", function() {
           editStudent(startIndex + index);
         });
@@ -66,11 +62,7 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
 
         var deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
-<<<<<<< HEAD
         deleteButton.classList.add("btn", "btn-danger");
-=======
-        // Add your delete button styles here
->>>>>>> 1ae2a9bfd48b8192fd10ebda4ac67046f5593afa
         deleteButton.addEventListener("click", function() {
           deleteStudent(startIndex + index);
         });
@@ -87,10 +79,7 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
 
       var previousButton = document.createElement("button");
       previousButton.textContent = "Previous";
-<<<<<<< HEAD
       previousButton.classList.add("btn", "btn-primary");
-=======
->>>>>>> 1ae2a9bfd48b8192fd10ebda4ac67046f5593afa
       previousButton.disabled = currentPage === 1;
       previousButton.addEventListener("click", function() {
         currentPage--;
@@ -99,7 +88,6 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
       paginationDiv.appendChild(previousButton);
 
       var pageNumbers = document.createElement("div");
-<<<<<<< HEAD
       pageNumbers.textContent = "Pages: ";
 
       var firstPageLink = document.createElement("a");
@@ -147,54 +135,6 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
         lastPageLink.classList.add("pagination-link");
         lastPageLink.addEventListener("click", function(event) {
           currentPage = parseInt(event.target.dataset.page);
-=======
-      pageNumbers.classList.add("pagination");
-
-      var startPage = 1;
-      var endPage = totalPages;
-      var maxPageNumbers = 5;
-      var ellipsisNeeded = false;
-
-      if (totalPages > maxPageNumbers) {
-        if (currentPage <= maxPageNumbers - 2) {
-          endPage = maxPageNumbers - 1;
-          ellipsisNeeded = true;
-        } else if (currentPage >= totalPages - 2) {
-          startPage = totalPages - maxPageNumbers + 2;
-          ellipsisNeeded = true;
-        } else {
-          startPage = currentPage - Math.floor(maxPageNumbers / 2);
-          endPage = currentPage + Math.floor(maxPageNumbers / 2);
-          ellipsisNeeded = true;
-        }
-      }
-
-      for (var i = startPage; i <= endPage; i++) {
-        var pageLink = document.createElement("span");
-        pageLink.textContent = i;
-        pageLink.addEventListener("click", function(event) {
-          currentPage = parseInt(event.target.textContent);
-          paginate();
-        });
-
-        if (i === currentPage) {
-          pageLink.classList.add("current");
-        }
-
-        pageNumbers.appendChild(pageLink);
-      }
-
-      if (ellipsisNeeded) {
-        var ellipsis = document.createElement("span");
-        ellipsis.textContent = "...";
-        pageNumbers.insertBefore(ellipsis, pageNumbers.children[1]);
-        pageNumbers.appendChild(ellipsis.cloneNode(true));
-
-        var lastPageLink = document.createElement("span");
-        lastPageLink.textContent = totalPages;
-        lastPageLink.addEventListener("click", function() {
-          currentPage = totalPages;
->>>>>>> 1ae2a9bfd48b8192fd10ebda4ac67046f5593afa
           paginate();
         });
         pageNumbers.appendChild(lastPageLink);
@@ -204,10 +144,7 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
 
       var nextButton = document.createElement("button");
       nextButton.textContent = "Next";
-<<<<<<< HEAD
       nextButton.classList.add("btn", "btn-primary");
-=======
->>>>>>> 1ae2a9bfd48b8192fd10ebda4ac67046f5593afa
       nextButton.disabled = currentPage === totalPages;
       nextButton.addEventListener("click", function() {
         currentPage++;
@@ -222,15 +159,9 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
 
       if (searchInput) {
         filteredData = storedData.filter(function(student) {
-<<<<<<< HEAD
           var fullName = student.name.toLowerCase();
           var studentId = student.studentId.toLowerCase();
           return fullName === searchInput || studentId === searchInput;
-=======
-          var nameMatch = student.name.toLowerCase().includes(searchInput);
-          var idMatch = student.studentId.toLowerCase().includes(searchInput);
-          return nameMatch || idMatch;
->>>>>>> 1ae2a9bfd48b8192fd10ebda4ac67046f5593afa
         });
       } else {
         filteredData = storedData;
@@ -241,7 +172,6 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
       paginate();
     }
 
-<<<<<<< HEAD
     function deleteSelectedStudents() {
       var checkboxes = document.getElementsByName("studentCheckbox");
       var selectedIndexes = [];
@@ -286,47 +216,3 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
     document.getElementById("deleteSelectedButton").addEventListener("click", deleteSelectedStudents);
 
     filterStudents()
-=======
-    function deleteStudent(index) {
-      storedData.splice(index, 1);
-      localStorage.setItem("studentData", JSON.stringify(storedData));
-      filterStudents();
-    }
-
-    function deleteSelected() {
-      var checkboxes = document.querySelectorAll('input[name="studentCheckbox"]:checked');
-      var indexesToDelete = Array.from(checkboxes).map(function(checkbox) {
-        return parseInt(checkbox.value);
-      });
-
-      indexesToDelete.sort(function(a, b) {
-        return b - a;
-      }).forEach(function(index) {
-        storedData.splice(index, 1);
-      });
-
-      localStorage.setItem("studentData", JSON.stringify(storedData));
-      filterStudents();
-    }
-
-    function editStudent(index) {
-      window.location.href = "edit.html?index=" + index;
-    }
-
-    document.getElementById("searchButton").addEventListener("click", function() {
-      filterStudents();
-    });
-
-    var deleteSelectedButton = document.getElementById("deleteSelectedButton");
-    deleteSelectedButton.addEventListener("click", deleteSelected);
-
-    var selectAllCheckbox = document.getElementById("selectAllCheckbox");
-    selectAllCheckbox.addEventListener("change", function() {
-      var checkboxes = document.querySelectorAll('input[name="studentCheckbox"]');
-      checkboxes.forEach(function(checkbox) {
-        checkbox.checked = selectAllCheckbox.checked;
-      });
-    });
-
-    filterStudents();
->>>>>>> 1ae2a9bfd48b8192fd10ebda4ac67046f5593afa
