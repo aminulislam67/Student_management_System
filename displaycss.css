@@ -126,15 +126,17 @@ padding-top: 20px;
   margin: 0 10px;
 }
 
-#pagination a {
-  display: inline-block;
-  margin: 5px;
-  padding: 5px 10px;
-  text-decoration: none;
-  border: 1px solid #000;
-  background-color: #fff;
+.pagination {
+  margin-top: 20px;
 }
-
-#pagination a:hover {
-  background-color: #ddd;
+.pagination button,
+.pagination span {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.pagination button:hover,
+.pagination span.current {
+  background-color: #ccc;
 }
