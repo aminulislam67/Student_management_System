@@ -117,26 +117,33 @@ padding-top: 20px;
   padding-top: 20px;
 
 }
-#pagination button {
-  margin: 5px;
-}
-
-#pagination div {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-.pagination {
+#pagination {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
 }
-.pagination button,
-.pagination span {
-  margin-right: 5px;
-  padding: 5px 10px;
+
+#pagination .pagination-link {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 5px;
+  background-color: #f2f2f2;
   border: 1px solid #ccc;
+  color: #333;
+  text-decoration: none;
   cursor: pointer;
 }
-.pagination button:hover,
-.pagination span.current {
-  background-color: #ccc;
+
+#pagination .pagination-link.active {
+  background-color: #333;
+  color: #fff;
+}
+
+#pagination .pagination-link.disabled {
+  cursor: not-allowed;
+}
+
+#pagination .pagination-ellipsis {
+  margin: 0 5px;
+  color: #999;
 }
