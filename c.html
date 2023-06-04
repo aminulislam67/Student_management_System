@@ -1,4 +1,52 @@
-var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="displaycss.css">
+</head>
+<body>
+  <nav>
+    <a class="link3" href="crudindex.html">Add Student</a>
+    <a class="link3" href="login.html">Logout</a> 
+  </nav>
+
+  <div class="container">
+    <h1 class="mid">Student Management System - Displaying Students Information</h1>
+  </div>
+
+  <div class="butto">
+    <div>
+      <label for="searchInput">Search by Name or Student ID:</label>
+      <input type="text" id="searchInput">
+      <button id="searchButton" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <div>
+    <button id="deleteSelectedButton" class="btn btn-danger">Delete Selected</button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th><input type="checkbox" id="selectAllCheckbox"></th>
+        <th>Serial Number</th>
+        <th>Name</th>
+        <th>Student ID</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Session</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="dataBody"></tbody>
+  </table>
+
+  <div id="pagination"></div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
     var currentPage = 1;
     var pageSize = 2;
     var totalPages = Math.ceil(storedData.length / pageSize);
@@ -88,13 +136,12 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
       paginationDiv.appendChild(previousButton);
 
       var pageNumbers = document.createElement("div");
-      // pageNumbers.textContent = "Pages: ";
+      pageNumbers.textContent = "Pages: ";
 
       var firstPageLink = document.createElement("a");
       firstPageLink.href = "#";
       firstPageLink.textContent = "1";
       firstPageLink.dataset.page = 1;
-      firstPageLink.classList.add("pagination-link");
       firstPageLink.addEventListener("click", function(event) {
         currentPage = parseInt(event.target.dataset.page);
         paginate();
@@ -114,7 +161,6 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
         pageLink.href = "#";
         pageLink.textContent = i;
         pageLink.dataset.page = i;
-        pageLink.classList.add("pagination-link");
         pageLink.addEventListener("click", function(event) {
           currentPage = parseInt(event.target.dataset.page);
           paginate();
@@ -133,7 +179,6 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
         lastPageLink.href = "#";
         lastPageLink.textContent = totalPages;
         lastPageLink.dataset.page = totalPages;
-        lastPageLink.classList.add("pagination-link");
         lastPageLink.addEventListener("click", function(event) {
           currentPage = parseInt(event.target.dataset.page);
           paginate();
@@ -216,4 +261,9 @@ var storedData = JSON.parse(localStorage.getItem("studentData")) || [];
     });
     document.getElementById("deleteSelectedButton").addEventListener("click", deleteSelectedStudents);
 
-    filterStudents()
+    filterStudents();
+  </script>
+</body>
+</html>
+
+

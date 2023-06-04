@@ -97,53 +97,45 @@ padding-top: 20px;
 
 
 }
-
-.del{
-  padding-top: 50px;
-}
-
-.butto{
-
-  text-align: left;
-  padding-bottom: 30px;
-
-  width: 500px;
-  
-  padding: 20px;
-  background-color: lightblue;
-  
-  border: 1px solid #000000;
-  border-radius: 5px;
-  padding-top: 20px;
-
-}
 #pagination {
-  display: flex;
+  display: flex !important;
   justify-content: center;
+  align-items: center;
+ 
   margin-top: 20px;
 }
 
-#pagination .pagination-link {
+.pagination-link {
   display: inline-block;
-  padding: 10px;
+  padding: 5px 10px;
   margin: 0 5px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
+  background-color: #f0f0f0;
   color: #333;
+  border: 1px solid #ccc;
   text-decoration: none;
-  cursor: pointer;
+  border-radius: 3px;
 }
 
-#pagination .pagination-link.active {
-  background-color: #333;
+.pagination-link:hover {
+  background-color: #ccc;
+}
+
+.pagination-link.active {
+  background-color: #4CAF50;
   color: #fff;
 }
 
-#pagination .pagination-link.disabled {
+.pagination-link.disabled {
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-#pagination .pagination-ellipsis {
-  margin: 0 5px;
-  color: #999;
+.pagination-link:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.pagination-link:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
