@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <h1 class="mid">Student Management System</h1>
+  <title>Login Page</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+ body{
+    background-image: url(https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=1060&t=st=1685291275~exp=1685291875~hmac=35d90f5a696d0d7055ac15a4f7487fcb96c44b9e6e7bf2050903c8234e4698ba);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+ 
+  
+    
+}
+   .mid{
+   text-align: left;
+   padding-bottom: 30px;
+   padding-left: 30px;
+
+   background-color: rgb(68, 208, 255);
+
+   border: 1px solid #000000;
+   border-radius: 5px;
+   padding-top: 20px;
+}
+    .container {
+      max-height: 600px;
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>User Login</h2>
+    <form>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+
+      <button class="btn btn-primary btn-block" type="submit">Login</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+      </div>
+  </div>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
