@@ -36,7 +36,7 @@ body{
 .mid{
    text-align: center;
    padding-bottom: 30px;
-   width: 400px;
+   width: 600px;
    margin: 0 auto;
    padding: 20px;
    background-color: lightblue;
@@ -60,4 +60,10 @@ body{
   input[type="tel"],
   select {
     width: 250px;
+  }
+
+  .dd{
+    display: flex;
+    text-align: center;
+    padding-bottom: 1000px;
   }
