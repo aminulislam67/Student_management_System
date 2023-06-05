@@ -3,11 +3,11 @@
 
 function crud() {
   // Get form values
-  var name = document.getElementById("name").value;
-  var studentId = document.getElementById("studentId").value;
-  var email = document.getElementById("email").value;
-  var age = document.getElementById("age").value;
-  var session = document.getElementById("session").value;
+  var name = $("#name").val();
+  var studentId = $("#studentId").val();
+  var email = $("#email").val();
+  var age = $("#age").val();
+  var session = $("#session").val();
 
   // Create an object to store the values
   var studentData = {
@@ -34,3 +34,4 @@ function crud() {
   console.log("Redirecting to display.html");
   window.location.href = "display.html";
 }
+
