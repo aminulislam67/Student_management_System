@@ -1,12 +1,13 @@
-document.getElementById("myForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent form submission
+// document.getElementById("myForm").addEventListener("submit", function(event) {
+//   event.preventDefault(); // Prevent form submission
 
+function crud() {
   // Get form values
   var name = document.getElementById("name").value;
   var studentId = document.getElementById("studentId").value;
   var email = document.getElementById("email").value;
   var age = document.getElementById("age").value;
-  var session = document.getElementById("session").value; 
+  var session = document.getElementById("session").value;
 
   // Create an object to store the values
   var studentData = {
@@ -14,7 +15,7 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     studentId: studentId,
     email: email,
     age: age,
-    session: session
+    session: session,
   };
 
   // Get existing student data from localStorage or initialize empty array
@@ -26,6 +27,10 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
   // Store the updated student data in localStorage
   localStorage.setItem("studentData", JSON.stringify(existingData));
 
+  // Log the existing data for debugging purposes
+  console.log("Existing Data:", existingData);
+
   // Redirect to the display page
+  console.log("Redirecting to display.html");
   window.location.href = "display.html";
-});
+}
